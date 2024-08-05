@@ -1,7 +1,7 @@
-import { abort, Item, print, toItem } from "kolmafia"
-import { sortDescending } from "./outfits"
+import { abort, Item, toItem } from "kolmafia"
+import { sortDescending } from "./utils"
 import { Action, OutfitState, RunPlan, SpleenItemMap } from "./types"
-import { printJSON } from "./config"
+import { printJSON } from "./utils"
 
 export function balance(plan: RunPlan, spleenItem: Item | null): number {
   const currentBalance = plan[0].spleenItemsAfter
@@ -23,6 +23,7 @@ export function transact(plan: RunPlan, spleenItemDiff: SpleenItemMap): SpleenIt
   const changedBalance = Object.entries(spleenItemDiff).reduce<SpleenItemMap>((result, [k, v]) => {
     return { ...result, [k]: v + balance(plan, toItem(k)) }
   }, {})
+
   return {
     ...currentBalance,
     ...changedBalance,
@@ -37,6 +38,7 @@ export function makePlan(state: OutfitState[]): RunPlan {
     }
   }, {})
   const initialBalance = { spleenItemsAfter }
+
   return state.sort(sortDescending).reduce<RunPlan>(
     (plan, outfit) => {
       return planActionsForOutfit(outfit, plan)
@@ -73,8 +75,7 @@ function processTransitional(outfit: OutfitState, plan: RunPlan): RunPlan {
     return plan
   }
 
-  // no-eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const item = outfit.pieces[0]!.item
+  const item = outfit.pieces[0].item
   const acquireAction: Action = {
     type: "buy",
     item,

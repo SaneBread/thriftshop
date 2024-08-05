@@ -1,7 +1,7 @@
 {
   "name": "thriftshop",
   "version": "1.0.0",
-  "description": "Trade your hand-me-downs for some vintage gear!",
+  "description": "Trade your hand-me-downs in for some vintage gear!",
   "main": "KoLmafia/scripts/thriftshop.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,16 +36,6 @@
     "libram": "^0.9.1"
   },
   "license": "ISC",
-  "repository": "git+https://github.com/docrostov/kol-js-starter.git",
-  "keywords": [
-    "KoLMafia",
-    "JS",
-    "TS"
-  ],
-  "bugs": {
-    "url": "https://github.com/docrostov/kol-js-starter/issues"
-  },
-  "homepage": "https://github.com/docrostov/kol-js-starter#readme",
   "packageManager": "yarn@4.3.1",
   "private": true
 }

@@ -1,7 +1,6 @@
-import { abort, print } from "kolmafia"
+import { print } from "kolmafia"
 import { Balance, Difficulty, Legend, Transaction } from "./types"
 import { RunPlan, State } from "./types"
-import { printJSON } from "./config"
 
 export function presentPlan(plan: RunPlan): void {
   print()

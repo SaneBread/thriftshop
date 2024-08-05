@@ -1,4 +1,3 @@
-import { printHtml } from "kolmafia"
 import { SlotAmounts } from "./types"
 
 export const DESIRED_AMOUNTS: SlotAmounts = {
@@ -14,7 +13,3 @@ export const DESIRED_AMOUNTS: SlotAmounts = {
 
 export const PERFORM_STEP_DELAY = 3 as const
 export const LIMIT_UP_TO_YEAR = 2015 as const
-
-export function printJSON(text: unknown): void {
-  printHtml(`<pre>${JSON.stringify(text, null, 2)}</pre>`, false)
-}

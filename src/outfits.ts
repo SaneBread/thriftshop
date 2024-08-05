@@ -1,19 +1,7 @@
 import { getRelated, outfitPieces, toItem } from "kolmafia"
 import { Difficulty, OutfitConfig } from "./types"
 import { LIMIT_UP_TO_YEAR } from "./config"
-
-export function sortAscending<T extends { year: number; difficulty: Difficulty }>(
-  a: T,
-  b: T
-): number {
-  return a.year - b.year || a.difficulty - b.difficulty
-}
-export function sortDescending<T extends { year: number; difficulty: Difficulty }>(
-  a: T,
-  b: T
-): number {
-  return sortAscending(b, a)
-}
+import { isNonEmptyArray, sortAscending, sortDescending } from "./utils"
 
 export const standardOutfits: OutfitConfig[] = [
   {
@@ -131,8 +119,14 @@ export const standardOutfits: OutfitConfig[] = [
    */
   .map((o) => {
     const pieces = outfitPieces(o.name)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const pulverizesInto = toItem(Object.keys(getRelated(pieces[0]!, "pulverize"))[0]!)
+    if (!isNonEmptyArray(pieces)) {
+      throw `Outfit ${o.name} doesn't contain any pieces!`
+    }
+    const smashesInto = Object.entries(getRelated(pieces[0], "pulverize"))
+    if (!isNonEmptyArray(smashesInto)) {
+      throw `Pieces of ${o.name} don't pulverize into anything!`
+    }
+    const pulverizesInto = toItem(smashesInto[0][0]) // key of first item
     return { ...o, pieces, pulverizesInto }
   })
   /**
@@ -145,4 +139,4 @@ export const standardOutfits: OutfitConfig[] = [
     )
     return [...result, { ...outfit, buyWith: nextYear?.pulverizesInto ?? null }]
   }, [])
-  .sort((a, b) => a.year - b.year || a.difficulty - b.difficulty)
+  .sort(sortAscending)

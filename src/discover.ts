@@ -4,7 +4,6 @@ import {
   equippedAmount,
   Item,
   itemAmount,
-  outfitPieces,
   storageAmount,
   toSlot,
 } from "kolmafia"
@@ -13,13 +12,14 @@ import { OutfitConfig } from "./types"
 import { DESIRED_AMOUNTS } from "./config"
 import { State } from "./types"
 import { DerivedOutfitState, ItemState, OutfitState, SimpleOutfitState } from "./types"
+import { NonEmptyArray, sum } from "./utils"
 
 export function discover(): State {
   return standardOutfits.map(discoverOutfit).reduce(adjustOutfitsForPreviousYears, [])
 }
 
 function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {
-  const pieces = outfitPieces(outfit.name).map(discoverOutfitPiece)
+  const pieces = outfit.pieces.map(discoverOutfitPiece) as NonEmptyArray<ItemState> // mapping a NonEmptyArray yields a NonEmptyArray
   const pulverizedPieces = discoverOutfitPiece(outfit.pulverizesInto)
   const desiredPieces = pieces.map((p) => p.desired).reduce(sum)
   const excessPieces = pieces.map((p) => p.excess).reduce(sum)
@@ -105,8 +105,4 @@ function amendTotalPiecesNeeded(
         0
       ) + outfit.needPieces,
   }
-}
-
-function sum(a: number, b: number): number {
-  return a + b
 }

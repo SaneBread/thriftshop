@@ -1,4 +1,5 @@
-import { Item, SlotType } from "kolmafia"
+import type { Item, SlotType } from "kolmafia"
+import { NonEmptyArray } from "./utils"
 
 /**
  * Current state of a single outfit piece OR smashed piece of gear in the
@@ -11,7 +12,7 @@ export type ItemState = {
    */
   slot: SlotType | "pulverized"
   /**
-   * A count of how many pieces of gear were found in which prt of the player's
+   * A count of how many pieces of gear were found in which part of the player's
    * posession.
    */
   places: {
@@ -59,7 +60,10 @@ export type ItemState = {
  * Current state of all outfit pieces in the player's posession and desired numbers
  */
 export type SimpleOutfitState = Omit<OutfitConfig, "pieces"> & {
-  pieces: Array<ItemState>
+  /**
+   * Inventory metadata about the pieces that comprise this outfit
+   */
+  pieces: NonEmptyArray<ItemState>
   /**
    * Sum of all desired pieces
    */
@@ -123,7 +127,7 @@ export type Transaction = Balance & {
  * A reverse array of PlanSteps (last element is first action)
  * There will always be at least one PlanStep in there
  */
-export type RunPlan = [Transaction | Balance, ...(Transaction | Balance)[]]
+export type RunPlan = NonEmptyArray<Transaction | Balance>
 
 export enum Difficulty {
   "Normal",
@@ -143,7 +147,7 @@ export type OutfitConfig = {
    * null for current year that cant be bought yet.
    */
   buyWith: Item | null
-  pieces: Array<Item>
+  pieces: NonEmptyArray<Item>
   difficulty: Difficulty
 }
 

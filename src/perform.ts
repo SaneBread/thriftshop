@@ -11,15 +11,18 @@ function confirm() {
 
 export function perform(plan: RunPlan): void {
   confirm()
-  plan.reverse().forEach((transaction) => {
-    if ("action" in transaction) {
-      const { type, quantity, item } = transaction.action
-      print(`Next up: ${type} ${quantity} ${item.name}`, "blue")
-      wait(PERFORM_STEP_DELAY)
-      performAction(transaction.action)
-    }
-    validate(transaction.spleenItemsAfter)
-  })
+  plan
+    .slice()
+    .reverse()
+    .forEach((transaction) => {
+      if ("action" in transaction) {
+        const { type, quantity, item } = transaction.action
+        print(`Next up: ${type} ${quantity} ${item.name}`, "blue")
+        wait(PERFORM_STEP_DELAY)
+        performAction(transaction.action)
+      }
+      validate(transaction.spleenItemsAfter)
+    })
   print(`All possible vintage gear acquired!`, "green")
 }
 
