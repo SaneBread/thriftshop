@@ -6,16 +6,21 @@ import { printJSON } from "./config"
 export function presentPlan(plan: RunPlan): void {
   print()
   print("ACTION PLAN", "blue")
-  plan
-    .slice() // new array
-    .reverse() // mutates in-place
-    .forEach((transaction) => {
-      if ("action" in transaction) {
-        const { type, quantity, item } = transaction.action
-        print(`${type} ${quantity} ${item};`)
-      }
-      presentSpleenBalance(transaction)
-    })
+  if (plan.length <= 1) {
+    // 1 is initial balance
+    print("We can only look but have nothing to trade", "red")
+  } else {
+    plan
+      .slice() // new array
+      .reverse() // mutates in-place
+      .forEach((transaction) => {
+        if ("action" in transaction) {
+          const { type, quantity, item } = transaction.action
+          print(`${type} ${quantity} ${item};`)
+        }
+        presentSpleenBalance(transaction)
+      })
+  }
   print("END OF PLAN", "blue")
 }
 
