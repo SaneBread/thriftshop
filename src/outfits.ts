@@ -140,14 +140,20 @@ export const standardOutfits: OutfitConfig[] = [
   /**
    * !!! Debugging simplifier; delete!
    */
-  // .filter((a) => a.difficulty === Difficulty.Hardcore)
-  .filter((a) => a.difficulty === Difficulty.Normal)
+  .filter((a) => a.difficulty === Difficulty.Hardcore)
+  // .filter((a) => a.difficulty === Difficulty.Normal)
+  /**
+   * Limit down to a certain year
+   */
+  // .filter((a) => a.year >= 2023)
   /**
    * Add mafia derived info
    */
   .map((o) => {
     const pieces = outfitPieces(o.name)
-    const pulverizesInto = toItem(Object.keys(getRelated(pieces[0], "pulverize"))[0])
+    const pulverizesInto = toItem(
+      Object.keys(getRelated(pieces[0] as Item, "pulverize"))[0] as string
+    )
     return { ...o, pieces, pulverizesInto }
   })
   /**

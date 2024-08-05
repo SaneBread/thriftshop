@@ -4,15 +4,18 @@ import {
   equippedAmount,
   Item,
   itemAmount,
-  outfit,
   outfitPieces,
   print,
-  Slot,
+  printHtml,
   SlotType,
   storageAmount,
   toSlot,
 } from "kolmafia"
 import { Difficulty, OutfitConfig, sortDescending, standardOutfits } from "./outfits"
+
+function printJSON(text: unknown): void {
+  printHtml(`<pre>${JSON.stringify(text, null, 2)}</pre>`, false)
+}
 
 /**
  * Todo list
@@ -51,6 +54,7 @@ type SimpleOutfitState = Omit<OutfitConfig, "pieces"> & {
    * Number of pulverized pieces of gear from this set exist are in the player's posession
    */
   pulverizedPieces: ItemState
+  toAcquirePieces: Map<Item["name"], number>
 }
 
 type DerivedOutfitState = {
@@ -120,6 +124,10 @@ type ItemState = {
    */
   total: number
   /**
+   * How many of this piece to acquire
+   */
+  toAcquire: number
+  /**
    * The number of pieces found in the player's inventory, which are the only
    * ones we will consider for smashing purposes.
    */
@@ -188,12 +196,14 @@ function discoverOutfitPiece(item: Item): ItemState {
 
   const total = Object.values(places).reduce(sum)
   const desired = desiredAmounts[slot] ?? 0
+  const toAcquire = Math.max(desired - total, 0)
 
   return {
     item,
     slot,
     places,
     total,
+    toAcquire,
     usable: places.inventory,
     desired,
     buy: Math.max(desired - total, 0),
@@ -211,6 +221,10 @@ function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {
   const canSmashPieces = pieces.map((p) => p.canPulverize).reduce(sum)
   const totalPieces = pieces.map((p) => Math.min(p.total, p.desired)).reduce(sum)
   const needPieces = pieces.map((p) => p.buy).reduce(sum)
+  const toAcquirePieces = pieces.reduce<Map<Item["name"], number>>(
+    (result, { item, toAcquire }) => ({ ...result, [item.name]: toAcquire }),
+    {} as Map<Item["name"], number>
+  )
 
   return {
     ...outfit,
@@ -221,6 +235,7 @@ function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {
     totalPieces,
     needPieces,
     pulverizedPieces,
+    toAcquirePieces,
   }
 }
 
@@ -312,23 +327,85 @@ function show(state: State): void {
   })
 }
 
-type RunPlan = {
-  actions: string[]
+type EmptyPlanStep = {
+  outfit: OutfitState
+  currencyLeft: number
+  previousYearsCurrency: number
+}
+type PlanStep = EmptyPlanStep & { action: string }
+
+type RunPlan = [PlanStep[], EmptyPlanStep]
+
+function acquirePiecesPlan(outfit: OutfitState, lastStep: EmptyPlanStep): RunPlan {
+  return Object.entries(outfit.toAcquirePieces).reduce<RunPlan>(
+    (result, [name, amount]) => {
+      const [previousActions, nextStep] = result
+      if (!nextStep.currencyLeft || !amount) {
+        return result
+      }
+      const spend = Math.min(nextStep.currencyLeft, amount)
+      const currencyLeft = nextStep.currencyLeft - spend
+      const action = `acquire ${spend} ${name}`
+      return [[...previousActions, { ...nextStep, action }], { ...nextStep, currencyLeft }]
+    },
+    [[], lastStep]
+  )
 }
 
-function planActionsForOutfit(plan: RunPlan, outfit: OutfitState) {
-  return plan
+function planActionsForOutfit(outfit: OutfitState, lastStepOfLastYear?: EmptyPlanStep): RunPlan {
+  const firstStepOfTheYear: EmptyPlanStep = {
+    outfit,
+    currencyLeft: lastStepOfLastYear?.previousYearsCurrency ?? 0,
+    previousYearsCurrency: outfit.pulverizedPieces.usable,
+  }
+  return [
+    acquirePiecesPlan,
+    // pulverizeExcess(),
+    // acquireTransitional(),
+    // pulverizeTransitional(),
+  ].reduce<RunPlan>(
+    (result, fn) => {
+      const [initialActions, firstStep] = result
+      const [actions, lastStep] = fn(outfit, firstStep)
+      return [[...initialActions, ...actions], lastStep]
+    },
+    [[], firstStepOfTheYear]
+  )
 }
 
-function plan(state: OutfitState[]): RunPlan {
-  const initialPlan = { actions: [] }
-  return state.sort(sortDescending).reduce(planActionsForOutfit, initialPlan)
+function makePlan(state: OutfitState[]): RunPlan {
+  return state.sort(sortDescending).reduce<RunPlan>(
+    ([previousActions, firstStep], outfit) => {
+      const [actions, nextStep] = planActionsForOutfit(outfit, firstStep)
+      return [[...previousActions, ...actions], nextStep]
+    },
+    [[], {} as EmptyPlanStep]
+  )
+}
+
+function confirmPlan([actions, lastStep]: RunPlan) {
+  print()
+  print("ACTION PLAN", "blue")
+  const fullPlan: Optional<PlanStep, "action">[] = [...actions, lastStep]
+  fullPlan.forEach(({ outfit, currencyLeft, previousYearsCurrency, action }) => {
+    print(
+      `${currencyLeft} ${outfit.buyWith?.name ?? "LOLBAL"}, ${previousYearsCurrency} ${
+        outfit.pulverizesInto.name
+      }`,
+      "gray"
+    )
+    if (!action) {
+      return
+    }
+    print(`-> ${action};`)
+  })
+  print("END OF PLAN", "blue")
 }
 
 export function main(): void {
   const state = discover()
   show(state)
-  plan(state)
-  // confirm()
+  const plan = makePlan(state)
+  confirmPlan(plan)
   // do()
 }

@@ -11,6 +11,7 @@
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
     "pretty": true,
     "strict": true,
     "target": "es2018"
