@@ -1,21 +1,47 @@
-import { print } from "kolmafia"
-import { Difficulty, Legend } from "./types"
-import { Optional, PlanStep, RunPlan, State } from "./types"
+import { abort, print } from "kolmafia"
+import { Balance, Difficulty, Legend, Transaction } from "./types"
+import { RunPlan, State } from "./types"
+import { printJSON } from "./config"
 
-export function presentPlan([actions, lastStep]: RunPlan): void {
+export function presentPlan(plan: RunPlan): void {
   print()
   print("ACTION PLAN", "blue")
-  const fullPlan: Optional<PlanStep, "action">[] = [...actions, lastStep]
-  fullPlan.forEach(({ outfit, currencyLeft, previousYearsCurrency, action }) => {
-    const currency = outfit.buyWith ? ` ${currencyLeft} ${outfit.buyWith.name} and` : ""
-    print(`With${currency} ${previousYearsCurrency} ${outfit.pulverizesInto.name}:`, "gray")
-    if (!action) {
-      return
-    }
-    const { type, quantity, item } = action
-    print(`${type} ${quantity} ${item};`)
-  })
+  plan
+    .slice() // new array
+    .reverse() // mutates in-place
+    .forEach((transaction) => {
+      if ("action" in transaction) {
+        const { type, quantity, item } = transaction.action
+        print(`${type} ${quantity} ${item};`)
+      }
+      presentSpleenBalance(transaction)
+    })
   print("END OF PLAN", "blue")
+}
+
+function presentSpleenBalance(transaction: Balance | Transaction): void {
+  const relevantSpleenItemStrings = Object.entries(transaction.spleenItemsAfter)
+    .filter(([, amount]) => amount > 0)
+    // .filter(([spleenItemName]) => {
+    //   if (!("action" in transaction)) {
+    //     return true
+    //   }
+    //   switch (transaction.action.type) {
+    //     case "buy":
+    //       return spleenItemName === transaction.outfit.buyWith?.name ?? false
+    //     case "pulverize":
+    //       return spleenItemName === transaction.outfit.pulverizesInto.name
+    //     default:
+    //       abort(`Invalid action encountered: ${transaction.action.type}`)
+    //   }
+    // })
+    .map(([k, v]) => `${v} ${k}`)
+
+  const printString =
+    relevantSpleenItemStrings.length > 0
+      ? relevantSpleenItemStrings.join(", ")
+      : "no relevant spleen items"
+  print(`With ${printString}:`, "gray")
 }
 
 export function presentState(state: State): void {

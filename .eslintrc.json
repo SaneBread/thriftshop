@@ -9,7 +9,7 @@
   "rules": {
     "block-scoped-var": "error",
     "eol-last": "error",
-    "eqeqeq": "error",
+    "eqeqeq": ["error", "smart"],
     "no-trailing-spaces": "error",
     "no-useless-rename": "error",
     "no-var": "error",

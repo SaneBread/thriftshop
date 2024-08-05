@@ -4,10 +4,6 @@ import { presentPlan, presentState } from "./present"
 import { makePlan } from "./plan"
 import { perform } from "./perform"
 
-function printJSON(text: unknown): void {
-  printHtml(`<pre>${JSON.stringify(text, null, 2)}</pre>`, false)
-}
-
 export function main(args: string): void {
   const doShow = args?.split(" ").find((a) => a === "show") || !args?.length
   const doPlan = args?.split(" ").find((a) => a === "plan")

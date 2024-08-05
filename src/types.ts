@@ -104,20 +104,26 @@ export type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>
 export type SlotAmounts = {
   [s in SlotType | "pulverized"]?: number
 }
-export type EmptyPlanStep = {
-  outfit: OutfitState
-  currencyLeft: number
-  previousYearsCurrency: number
-}
+export type State = Array<OutfitState>
 
+export type SpleenItemMap = { [s: string]: number }
+export type Balance = {
+  spleenItemsAfter: SpleenItemMap
+}
 export type Action = {
   type: "buy" | "pulverize"
   item: Item
   quantity: number
 }
-export type PlanStep = EmptyPlanStep & { action: Action }
-export type RunPlan = [PlanStep[], EmptyPlanStep]
-export type State = Array<OutfitState>
+export type Transaction = Balance & {
+  outfit: OutfitState
+  action: Action
+}
+/**
+ * A reverse array of PlanSteps (last element is first action)
+ * There will always be at least one PlanStep in there
+ */
+export type RunPlan = [Transaction | Balance, ...(Transaction | Balance)[]]
 
 export enum Difficulty {
   "Normal",
