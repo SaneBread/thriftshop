@@ -1,26 +1,6 @@
-import { getRelated, Item, outfitPieces, toItem } from "kolmafia"
-
-export enum Difficulty {
-  "Normal",
-  "Hardcore",
-}
-
-/**
- * Metadata that's not available in Mafia related to the Standard outfits of that year
- */
-export type OutfitConfig = {
-  year: number
-  name: string
-  pulverizesInto: Item
-  /**
-   * The Pulverized piece of next year's gear that's needed as currency in the
-   * Armory and Leggery.
-   * null for current year that cant be bought yet.
-   */
-  buyWith: Item | null
-  pieces: Array<Item>
-  difficulty: Difficulty
-}
+import { getRelated, outfitPieces, toItem } from "kolmafia"
+import { Difficulty, OutfitConfig } from "./types"
+import { LIMIT_UP_TO_YEAR } from "./config"
 
 export function sortAscending<T extends { year: number; difficulty: Difficulty }>(
   a: T,
@@ -140,20 +120,19 @@ export const standardOutfits: OutfitConfig[] = [
   /**
    * !!! Debugging simplifier; delete!
    */
-  .filter((a) => a.difficulty === Difficulty.Hardcore)
+  // .filter((a) => a.difficulty === Difficulty.Hardcore)
   // .filter((a) => a.difficulty === Difficulty.Normal)
   /**
    * Limit down to a certain year
    */
-  // .filter((a) => a.year >= 2023)
+  .filter((a) => a.year >= LIMIT_UP_TO_YEAR)
   /**
    * Add mafia derived info
    */
   .map((o) => {
     const pieces = outfitPieces(o.name)
-    const pulverizesInto = toItem(
-      Object.keys(getRelated(pieces[0] as Item, "pulverize"))[0] as string
-    )
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const pulverizesInto = toItem(Object.keys(getRelated(pieces[0]!, "pulverize"))[0]!)
     return { ...o, pieces, pulverizesInto }
   })
   /**

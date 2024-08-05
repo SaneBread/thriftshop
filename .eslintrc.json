@@ -11,6 +11,7 @@
     "eol-last": "error",
     "eqeqeq": "error",
     "no-trailing-spaces": "error",
+    "no-useless-rename": "error",
     "no-var": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
