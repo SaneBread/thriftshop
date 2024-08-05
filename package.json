@@ -1,8 +1,8 @@
 {
-  "name": "kol-js-starter",
+  "name": "thriftshop",
   "version": "1.0.0",
-  "description": "Example package for KoLmafia TypeScript scripts.",
-  "main": "KoLmafia/scripts/kol-js-starter/main-script-name.js",
+  "description": "Trade your hand-me-downs for some vintage gear!",
+  "main": "KoLmafia/scripts/thriftshop.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "yarn run build:types && yarn run build:js",
@@ -23,23 +23,19 @@
     "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-libram": "^0.1.9",
+    "eslint-plugin-libram": "^0.4.8",
     "prettier": "^2.3.2",
-    "typescript": "^4.4.2",
+    "typescript": "^5.5.3",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
     "core-js": "^3.16.4",
-    "kolmafia": ">=1.2.0",
-    "libram": ">=0.3.0"
+    "kolmafia": "^5.27998.0",
+    "libram": "^0.9.1"
   },
-  "author": "Captain Scotch",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/docrostov/kol-js-starter.git"
-  },
+  "repository": "git+https://github.com/docrostov/kol-js-starter.git",
   "keywords": [
     "KoLMafia",
     "JS",
@@ -48,5 +44,7 @@
   "bugs": {
     "url": "https://github.com/docrostov/kol-js-starter/issues"
   },
-  "homepage": "https://github.com/docrostov/kol-js-starter#readme"
+  "homepage": "https://github.com/docrostov/kol-js-starter#readme",
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "private": true
 }
