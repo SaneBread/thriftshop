@@ -2,7 +2,15 @@
 
 Trade in your hand-me-downs for some vintage gear!
 
-## Windowshopping
+## Installation
+
+```
+git checkout SaneBread/thriftshop release
+```
+
+## Things to do
+
+### Browse the Racks
 
 ```
 thriftshop look
@@ -11,7 +19,7 @@ thriftshop look
 Will present an overview of all the known standard outfits, the pieces of it you own, how many more are needed for the full set, and how many can be pulverized to acquire previous years' outfits
 ![](screenshots/show.png)
 
-## Shopping list
+### Make a Shopping List
 
 ```
 thriftshop list
@@ -23,7 +31,7 @@ It will only consider gear and spleen items for use when they live directly in y
 
 ![](screenshots/plan.png)
 
-## Go Shopping
+### Go Shopping
 
 ```
 thriftshop shop
