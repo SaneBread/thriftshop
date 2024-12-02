@@ -48,12 +48,15 @@ function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {
 
 function discoverOutfitPiece(item: Item): ItemState {
   const slot = item.spleen > 0 ? ("pulverized" as const) : toSlot(item).toString();
+  const desired = DESIRED_AMOUNTS[slot] ?? 0;
 
   const places: ItemState["places"] = {
     inventory:
-      [item, $item`none`].includes(args.config.oneshot) || item.spleen
+      item.spleen || args.config.oneshot === $item`none`
         ? itemAmount(item)
-        : Math.max(1, itemAmount(item)),
+        : args.config.oneshot === item
+          ? Math.max(0, desired - 1)
+          : Math.max(1, itemAmount(item)),
     closet: closetAmount(item),
     storage: storageAmount(item),
     display: displayAmount(item),
@@ -61,7 +64,6 @@ function discoverOutfitPiece(item: Item): ItemState {
   };
 
   const total = Object.values(places).reduce(sum);
-  const desired = DESIRED_AMOUNTS[slot] ?? 0;
   const toAcquire = Math.max(desired - total, 0);
 
   return {
@@ -101,7 +103,10 @@ function amendTotalPiecesNeeded(
   outfit: SimpleOutfitState,
   previousYear?: OutfitState,
 ): DerivedOutfitState {
-  const needPreviousYearsPieces = previousYear?.needTotalPieces ?? 0;
+  const needPreviousYearsPieces = Math.max(
+    0,
+    (previousYear?.needTotalPieces ?? 0) - outfit.pulverizedPieces.usable,
+  );
   return {
     needPreviousYearsPieces: needPreviousYearsPieces,
     needTotalPieces:
