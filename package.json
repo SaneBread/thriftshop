@@ -20,12 +20,10 @@
     "@babel/preset-typescript": "^7.26.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.16.0",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
     "babel-loader": "^9.2.1",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-libram": "^0.4.8",
+    "eslint-plugin-libram": "^0.4.17",
     "prettier": "^3.4.1",
     "typescript": "^5.7.2",
     "webpack": "^5.96.1",
@@ -33,9 +31,9 @@
   },
   "dependencies": {
     "core-js": "^3.39.0",
-    "grimoire-kolmafia": "latest",
-    "kolmafia": "latest",
-    "libram": "latest"
+    "grimoire-kolmafia": "^0.3.26",
+    "kolmafia": "^5.28145.0",
+    "libram": "^0.9.21"
   },
   "license": "ISC",
   "packageManager": "yarn@4.3.1",

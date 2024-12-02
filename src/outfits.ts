@@ -1,7 +1,7 @@
-import { getRelated, outfitPieces, toItem } from "kolmafia"
-import { Difficulty, OutfitConfig } from "./types"
-import { LIMIT_UP_TO_YEAR } from "./config"
-import { isNonEmptyArray, sortAscending, sortDescending } from "./utils"
+import { getRelated, outfitPieces, toItem } from "kolmafia";
+import { Difficulty, OutfitConfig } from "./types";
+import { LIMIT_UP_TO_YEAR } from "./config";
+import { isNonEmptyArray, sortAscending, sortDescending } from "./utils";
 
 export const standardOutfits: OutfitConfig[] = [
   {
@@ -118,16 +118,16 @@ export const standardOutfits: OutfitConfig[] = [
    * Add mafia derived info
    */
   .map((o) => {
-    const pieces = outfitPieces(o.name)
+    const pieces = outfitPieces(o.name);
     if (!isNonEmptyArray(pieces)) {
-      throw `Outfit ${o.name} doesn't contain any pieces!`
+      throw `Outfit ${o.name} doesn't contain any pieces!`;
     }
-    const smashesInto = Object.entries(getRelated(pieces[0], "pulverize"))
+    const smashesInto = Object.entries(getRelated(pieces[0], "pulverize"));
     if (!isNonEmptyArray(smashesInto)) {
-      throw `Pieces of ${o.name} don't pulverize into anything!`
+      throw `Pieces of ${o.name} don't pulverize into anything!`;
     }
-    const pulverizesInto = toItem(smashesInto[0][0]) // key of first item
-    return { ...o, pieces, pulverizesInto }
+    const pulverizesInto = toItem(smashesInto[0][0]); // key of first item
+    return { ...o, pieces, pulverizesInto };
   })
   /**
    * Add next year's pulverizesInto as buyWith currency to this year's set
@@ -135,8 +135,8 @@ export const standardOutfits: OutfitConfig[] = [
   .sort(sortDescending)
   .reduce<OutfitConfig[]>((result, outfit) => {
     const nextYear = result.find(
-      (o) => o.difficulty === outfit.difficulty && o.year === outfit.year + 1
-    )
-    return [...result, { ...outfit, buyWith: nextYear?.pulverizesInto ?? null }]
+      (o) => o.difficulty === outfit.difficulty && o.year === outfit.year + 1,
+    );
+    return [...result, { ...outfit, buyWith: nextYear?.pulverizesInto ?? null }];
   }, [])
-  .sort(sortAscending)
+  .sort(sortAscending);

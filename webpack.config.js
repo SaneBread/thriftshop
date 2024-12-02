@@ -1,10 +1,10 @@
 /* eslint-env node */
 
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require("path")
+const path = require("path");
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const webpack = require("webpack") // does this have a purpose? or can it just get deleted?
-const packageData = require("./package.json")
+const webpack = require("webpack"); // does this have a purpose? or can it just get deleted?
+const packageData = require("./package.json");
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 module.exports = {
@@ -50,4 +50,4 @@ module.exports = {
     // Add any ASH scripts you would like to use here to allow importing. E.g.:
     // "canadv.ash": "commonjs canadv.ash",
   },
-}
+};
