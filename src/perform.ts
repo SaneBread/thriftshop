@@ -1,12 +1,11 @@
 import { abort, buy, cliExecute, itemAmount, print, toItem, userConfirm, wait } from "kolmafia";
 import { Action, RunPlan, SpleenItemMap } from "./types";
-import { PERFORM_STEP_DELAY } from "./config";
 import { args } from "./args";
 
 function confirm() {
   if (args.config.yolo) {
     print("YOLO!!!1", "orange");
-    wait(5);
+    wait(args.config.wait);
     return;
   }
   if (!userConfirm(`Do you want to start thriftshopping?`)) {
@@ -23,8 +22,9 @@ export function perform(plan: RunPlan): void {
     .forEach((transaction) => {
       if ("action" in transaction) {
         const { type, quantity, item } = transaction.action;
+        print();
         print(`Next up: ${type} ${quantity} ${item.name}`, "blue");
-        wait(PERFORM_STEP_DELAY);
+        wait(args.config.wait);
         performAction(transaction.action);
       }
       validate(transaction.spleenItemsAfter);

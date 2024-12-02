@@ -29,6 +29,11 @@ export const args = Args.create(
         default: $item`none`,
         setting: "",
       }),
+      wait: Args.number({
+        help: "Seconds to wait before executing each step of the plan",
+        default: 3,
+        setting: "",
+      }),
       yolo: Args.flag({
         help: "DANGER. Will not ask for confirmation about anything. Potentially useful if you want to include this in a looping script",
         default: false,

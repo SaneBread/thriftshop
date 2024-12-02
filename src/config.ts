@@ -1,4 +1,4 @@
-import { SlotAmounts } from "./types"
+import { SlotAmounts } from "./types";
 
 export const DESIRED_AMOUNTS: SlotAmounts = {
   hat: 1,
@@ -9,7 +9,5 @@ export const DESIRED_AMOUNTS: SlotAmounts = {
   pants: 1,
   acc1: 1,
   pulverized: 0,
-}
-
-export const PERFORM_STEP_DELAY = 3 as const
-export const LIMIT_UP_TO_YEAR = 2015 as const
+};
+export const LIMIT_UP_TO_YEAR = 2015 as const;
