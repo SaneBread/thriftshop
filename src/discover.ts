@@ -27,7 +27,7 @@ function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {
   const excessPieces = pieces.map((p) => p.excess).reduce(sum);
   const canSmashPieces = pieces.map((p) => p.canPulverize).reduce(sum);
   const totalPieces = pieces.map((p) => Math.min(p.total, p.desired)).reduce(sum);
-  const needPieces = pieces.map((p) => p.buy).reduce(sum);
+  const needPieces = Math.max(0, pieces.map((p) => p.buy).reduce(sum) - pulverizedPieces.usable);
   const toAcquirePieces = pieces.reduce<Map<Item["name"], number>>(
     (result, { item, toAcquire }) => ({ ...result, [item.name]: toAcquire }),
     {} as Map<Item["name"], number>,
@@ -103,12 +103,9 @@ function amendTotalPiecesNeeded(
   outfit: SimpleOutfitState,
   previousYear?: OutfitState,
 ): DerivedOutfitState {
-  const needPreviousYearsPieces = Math.max(
-    0,
-    (previousYear?.needTotalPieces ?? 0) - outfit.pulverizedPieces.usable,
-  );
+  const needPreviousYearsPieces = previousYear?.needTotalPieces ?? 0;
   return {
-    needPreviousYearsPieces: needPreviousYearsPieces,
+    needPreviousYearsPieces,
     needTotalPieces:
       Math.max(
         needPreviousYearsPieces - (outfit.pulverizedPieces.usable + outfit.canSmashPieces),
