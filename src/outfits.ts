@@ -1,4 +1,4 @@
-import { getRelated, outfitPieces, print, toItem } from "kolmafia";
+import { getRelated, outfitPieces, toItem } from "kolmafia";
 import { Difficulty, OutfitConfig } from "./types";
 import { isNonEmptyArray, sortAscending, sortDescending } from "./utils";
 import { args } from "./args";
