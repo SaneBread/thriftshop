@@ -29,7 +29,7 @@ Configuration:
 
 ### Can I trust this script to not go haywire and randomly pulverize my hard-earned standard gear?
 
-_No_. That said, I did put in a bunch of failsaves to reduce the risk of such things happening. The browse and plan section are excrutiatingly verbose, and if during execution the expectations of the script are not met, it should immediately abort. You can also copy/paste individual lines from the plan, provides you have your `autoSatisfyWithCoinmasters` pref set to `true`. The script should only act on stuff in your inventory, so if you feel particularly nervous about seomthing, your closet is your friend.
+_No_. That said, I did put in a bunch of failsaves to reduce the risk of such things happening. The browse and plan section are excruciatingly verbose, and if during execution the expectations of the script are not met, it should immediately abort. You can also copy/paste individual lines from the plan, provides you have your `autoSatisfyWithCoinmasters` pref set to `true`. The script should only act on stuff in your inventory, so if you feel particularly nervous about something, your closet is your friend.
 
 ### Can I target a specific item if I don't have enough to get all the gear from later years first?
 

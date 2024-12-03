@@ -2699,7 +2699,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grimoire-kolmafia@npm:^0.3.26":
+"grimoire-kolmafia@npm:latest":
   version: 0.3.26
   resolution: "grimoire-kolmafia@npm:0.3.26"
   dependencies:
@@ -3050,7 +3050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kolmafia@npm:^5.28145.0":
+"kolmafia@npm:latest":
   version: 5.28145.0
   resolution: "kolmafia@npm:5.28145.0"
   checksum: 10c0/14883cc3d96d5738d6b21c0215a88bad1140b00ca12dd1e64a651619ff06d5c5e270eac941eb596076448f4ff0677f08fb994c8343a77c082ada21368a0051cd
@@ -3067,7 +3067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libram@npm:^0.9.21":
+"libram@npm:latest":
   version: 0.9.21
   resolution: "libram@npm:0.9.21"
   dependencies:
@@ -4092,9 +4092,9 @@ __metadata:
     eslint: "npm:^9.16.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-libram: "npm:^0.4.17"
-    grimoire-kolmafia: "npm:^0.3.26"
-    kolmafia: "npm:^5.28145.0"
-    libram: "npm:^0.9.21"
+    grimoire-kolmafia: "npm:latest"
+    kolmafia: "npm:latest"
+    libram: "npm:latest"
     prettier: "npm:^3.4.1"
     typescript: "npm:^5.7.2"
     webpack: "npm:^5.96.1"

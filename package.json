@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "core-js": "^3.39.0",
-    "grimoire-kolmafia": "^0.3.26",
-    "kolmafia": "^5.28145.0",
-    "libram": "^0.9.21"
+    "grimoire-kolmafia": "latest",
+    "kolmafia": "latest",
+    "libram": "latest"
   },
   "license": "ISC",
   "packageManager": "yarn@4.3.1",
