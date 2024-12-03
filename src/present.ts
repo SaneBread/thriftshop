@@ -51,7 +51,9 @@ function presentSpleenBalance(transaction: Balance | Transaction): void {
 }
 
 export function presentState(state: State): void {
-  oneShotWarning();
+  print();
+  print("YOUR SITUATION", "blue");
+  print();
 
   state.forEach((outfit) => {
     print(`${outfit.name} (${outfit.year}, ${Difficulty[outfit.difficulty]})`, "blue");
@@ -101,7 +103,9 @@ export function presentState(state: State): void {
     );
     print();
   });
+  oneShotWarning();
 }
+
 export function printQuantity(message: string, balance: number): void {
   const color = balance === 0 ? Legend.Complete : balance < 0 ? Legend.Need : Legend.Excess;
   print(message, color);
@@ -110,13 +114,14 @@ export function printQuantity(message: string, balance: number): void {
 function oneShotWarning() {
   if (args.config.oneshot !== $item`none`) {
     const color = "red";
+    print();
     print("WARNING", color);
     print("=========", color);
     print();
     print(
       `You are running thriftshop with the "oneshot" config option enabled.
-      To achieve the desired outcome, all the numbers below have been fudged.
-      Do not believe any numbers you see, instead focus on the proposed plan to retrieve your desired item.
+      To achieve the desired outcome, most of the numbers you see above have been fudged.
+      Do not believe any of it, instead focus on the proposed plan to retrieve your desired item.
       To get an accurate inventory of your standard gear, run this command again without the "oneshot" option.`,
       color,
     );

@@ -17,7 +17,7 @@ import { args } from "./args";
 import { $item } from "libram";
 
 export function discover(): State {
-  return standardOutfits.map(discoverOutfit).reduce(adjustOutfitsForPreviousYears, []);
+  return standardOutfits().map(discoverOutfit).reduce(adjustOutfitsForPreviousYears, []);
 }
 
 function discoverOutfit(outfit: OutfitConfig): SimpleOutfitState {

@@ -10,4 +10,3 @@ export const DESIRED_AMOUNTS: SlotAmounts = {
   acc1: 1,
   pulverized: 0,
 };
-export const LIMIT_UP_TO_YEAR = 2015 as const;

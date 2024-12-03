@@ -23,9 +23,27 @@ export const args = Args.create(
       }),
     }),
 
+    filter: Args.group("Filters", {
+      hardcore: Args.flag({
+        help: "Filters the outfit list and actions to only consider Hardcore paths",
+        default: false,
+        setting: "",
+      }),
+      normal: Args.flag({
+        help: "Filters the outfit list and actions to only consider Normal paths",
+        default: false,
+        setting: "",
+      }),
+      year: Args.number({
+        help: "Only consider gear starting from this year",
+        default: 2015,
+        setting: "",
+      }),
+    }),
+
     config: Args.group("Configuration", {
       oneshot: Args.item({
-        help: "Will attempt to shop for this specific item, ignoring everything else that you may be missing. This requires at least one excess piece of gear accessible from inventory.",
+        help: "Will attempt to shop for this specific item, ignoring everything else that you may be missing. This still requires at least one excess item accessible from inventory.",
         default: $item`none`,
         setting: "",
       }),

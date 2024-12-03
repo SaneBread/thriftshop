@@ -45,6 +45,7 @@ Note that in order to implement this, the numbers presented in the browse sectio
 
 - [ ] consider possible 1-handed vs 2-handed weapons, and single-equip accessories
 - [ ] allow multiple copies per slot in accordance with mafia prefs
+- [x] allow for basic filtering
 - [x] target a specific item
 - [x] proper arg handling
 - [x] write readme
