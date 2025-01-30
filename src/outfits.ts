@@ -6,6 +6,16 @@ import { args } from "./args";
 export const standardOutfits: () => OutfitConfig[] = () =>
   [
     {
+      year: 2025,
+      name: "Petrified Wood Professional Wardrobe",
+      difficulty: Difficulty.Hardcore,
+    },
+    {
+      year: 2025,
+      name: "Crepe Paper Participant's Clothes",
+      difficulty: Difficulty.Normal,
+    },
+    {
       year: 2024,
       name: "Adobe Armor",
       difficulty: Difficulty.Hardcore,
