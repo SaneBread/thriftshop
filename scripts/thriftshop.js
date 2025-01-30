@@ -93,6 +93,7 @@ function printJSON(text) {
   (0,external_kolmafia_namespaceObject.printHtml)("<pre>".concat(JSON.stringify(text, null, 2), "</pre>"), false);
 }
 ;// ./node_modules/grimoire-kolmafia/dist/args.js
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -102,8 +103,8 @@ function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 var Args = /*#__PURE__*/function () {
@@ -1450,6 +1451,7 @@ var $thrall = createSingleConstant(external_kolmafia_namespaceObject.Thrall, ext
  */
 var $thralls = createPluralConstant(external_kolmafia_namespaceObject.Thrall);
 ;// ./node_modules/libram/dist/lib.js
+function lib_typeof(o) { "@babel/helpers - typeof"; return lib_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, lib_typeof(o); }
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47;
 function lib_toConsumableArray(r) { return lib_arrayWithoutHoles(r) || lib_iterableToArray(r) || lib_unsupportedIterableToArray(r) || lib_nonIterableSpread(); }
 function lib_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1457,11 +1459,11 @@ function lib_iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[
 function lib_arrayWithoutHoles(r) { if (Array.isArray(r)) return lib_arrayLikeToArray(r); }
 function lib_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, lib_toPropertyKey(o.key), o); } }
 function lib_createClass(e, r, t) { return r && lib_defineProperties(e.prototype, r), t && lib_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function lib_toPropertyKey(t) { var i = lib_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function lib_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function lib_toPropertyKey(t) { var i = lib_toPrimitive(t, "string"); return "symbol" == lib_typeof(i) ? i : i + ""; }
+function lib_toPrimitive(t, r) { if ("object" != lib_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != lib_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function lib_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function _possibleConstructorReturn(t, e) { if (e && ("object" == typeof e || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == lib_typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
 function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _wrapNativeSuper(t) { var r = "function" == typeof Map ? new Map() : void 0; return _wrapNativeSuper = function _wrapNativeSuper(t) { if (null === t || !_isNativeFunction(t)) return t; if ("function" != typeof t) throw new TypeError("Super expression must either be null or a function"); if (void 0 !== r) { if (r.has(t)) return r.get(t); r.set(t, Wrapper); } function Wrapper() { return _construct(t, arguments, _getPrototypeOf(this).constructor); } return Wrapper.prototype = Object.create(t.prototype, { constructor: { value: Wrapper, enumerable: !1, writable: !0, configurable: !0 } }), _setPrototypeOf(Wrapper, t); }, _wrapNativeSuper(t); }
@@ -2700,6 +2702,7 @@ function isPhylumProperty(property) {
   return phylumPropertiesSet.has(property);
 }
 ;// ./node_modules/libram/dist/property.js
+function property_typeof(o) { "@babel/helpers - typeof"; return property_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, property_typeof(o); }
 function property_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function property_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? property_ownKeys(Object(t), !0).forEach(function (r) { property_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : property_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function property_toConsumableArray(r) { return property_arrayWithoutHoles(r) || property_iterableToArray(r) || property_unsupportedIterableToArray(r) || property_nonIterableSpread(); }
@@ -2710,8 +2713,8 @@ function property_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeEr
 function property_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, property_toPropertyKey(o.key), o); } }
 function property_createClass(e, r, t) { return r && property_defineProperties(e.prototype, r), t && property_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function property_defineProperty(e, r, t) { return (r = property_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function property_toPropertyKey(t) { var i = property_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function property_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function property_toPropertyKey(t) { var i = property_toPrimitive(t, "string"); return "symbol" == property_typeof(i) ? i : i + ""; }
+function property_toPrimitive(t, r) { if ("object" != property_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != property_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function property_slicedToArray(r, e) { return property_arrayWithHoles(r) || property_iterableToArrayLimit(r, e) || property_unsupportedIterableToArray(r, e) || property_nonIterableRest(); }
 function property_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function property_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return property_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? property_arrayLikeToArray(r, a) : void 0; } }
@@ -3142,6 +3145,7 @@ var PropertiesManager = /*#__PURE__*/function () {
 }();
 property_defineProperty(PropertiesManager, "EMPTY_PREFERENCE", Symbol("empty preference"));
 ;// ./node_modules/libram/dist/combat.js
+function combat_typeof(o) { "@babel/helpers - typeof"; return combat_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, combat_typeof(o); }
 function _superPropGet(t, o, e, r) { var p = _get(combat_getPrototypeOf(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
 function _get() { return _get = "undefined" != typeof Reflect && Reflect.get ? Reflect.get.bind() : function (e, t, r) { var p = _superPropBase(e, t); if (p) { var n = Object.getOwnPropertyDescriptor(p, t); return n.get ? n.get.call(arguments.length < 3 ? e : r) : n.value; } }, _get.apply(null, arguments); }
 function _superPropBase(t, o) { for (; !{}.hasOwnProperty.call(t, o) && null !== (t = combat_getPrototypeOf(t));); return t; }
@@ -3155,11 +3159,11 @@ function combat_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.l
 function combat_defineProperty(e, r, t) { return (r = combat_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function combat_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, combat_toPropertyKey(o.key), o); } }
 function combat_createClass(e, r, t) { return r && combat_defineProperties(e.prototype, r), t && combat_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function combat_toPropertyKey(t) { var i = combat_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function combat_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function combat_toPropertyKey(t) { var i = combat_toPrimitive(t, "string"); return "symbol" == combat_typeof(i) ? i : i + ""; }
+function combat_toPrimitive(t, r) { if ("object" != combat_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != combat_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function combat_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function combat_callSuper(t, o, e) { return o = combat_getPrototypeOf(o), combat_possibleConstructorReturn(t, combat_isNativeReflectConstruct() ? Reflect.construct(o, e || [], combat_getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function combat_possibleConstructorReturn(t, e) { if (e && ("object" == typeof e || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return combat_assertThisInitialized(t); }
+function combat_possibleConstructorReturn(t, e) { if (e && ("object" == combat_typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return combat_assertThisInitialized(t); }
 function combat_assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
 function combat_inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && combat_setPrototypeOf(t, e); }
 function combat_wrapNativeSuper(t) { var r = "function" == typeof Map ? new Map() : void 0; return combat_wrapNativeSuper = function _wrapNativeSuper(t) { if (null === t || !combat_isNativeFunction(t)) return t; if ("function" != typeof t) throw new TypeError("Super expression must either be null or a function"); if (void 0 !== r) { if (r.has(t)) return r.get(t); r.set(t, Wrapper); } function Wrapper() { return combat_construct(t, arguments, combat_getPrototypeOf(this).constructor); } return Wrapper.prototype = Object.create(t.prototype, { constructor: { value: Wrapper, enumerable: !1, writable: !0, configurable: !0 } }), combat_setPrototypeOf(Wrapper, t); }, combat_wrapNativeSuper(t); }
@@ -3909,9 +3913,8 @@ function adventureMacro(loc, macro) {
  * @param nextMacro Macro to execute manually after autoattack completes.
  */
 function adventureMacroAuto(loc, autoMacro) {
-  var _nextMacro;
   var nextMacro = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-  nextMacro = (_nextMacro = nextMacro) !== null && _nextMacro !== void 0 ? _nextMacro : Macro.abort();
+  nextMacro = nextMacro !== null && nextMacro !== void 0 ? nextMacro : Macro.abort();
   autoMacro.setAutoAttack();
   nextMacro.save();
   try {
@@ -4066,8 +4069,9 @@ var StrictMacro = /*#__PURE__*/(/* unused pure expression or super */ null && (f
   }]);
 }(Macro)));
 ;// ./node_modules/grimoire-kolmafia/dist/combat.js
+function dist_combat_typeof(o) { "@babel/helpers - typeof"; return dist_combat_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, dist_combat_typeof(o); }
 function dist_combat_callSuper(t, o, e) { return o = dist_combat_getPrototypeOf(o), dist_combat_possibleConstructorReturn(t, dist_combat_isNativeReflectConstruct() ? Reflect.construct(o, e || [], dist_combat_getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function dist_combat_possibleConstructorReturn(t, e) { if (e && ("object" == typeof e || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return dist_combat_assertThisInitialized(t); }
+function dist_combat_possibleConstructorReturn(t, e) { if (e && ("object" == dist_combat_typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return dist_combat_assertThisInitialized(t); }
 function dist_combat_assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
 function dist_combat_isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (dist_combat_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
 function dist_combat_getPrototypeOf(t) { return dist_combat_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, dist_combat_getPrototypeOf(t); }
@@ -4083,8 +4087,8 @@ function dist_combat_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a 
 function dist_combat_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function dist_combat_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, dist_combat_toPropertyKey(o.key), o); } }
 function dist_combat_createClass(e, r, t) { return r && dist_combat_defineProperties(e.prototype, r), t && dist_combat_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function dist_combat_toPropertyKey(t) { var i = dist_combat_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function dist_combat_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function dist_combat_toPropertyKey(t) { var i = dist_combat_toPrimitive(t, "string"); return "symbol" == dist_combat_typeof(i) ? i : i + ""; }
+function dist_combat_toPrimitive(t, r) { if ("object" != dist_combat_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != dist_combat_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 /**
@@ -4597,12 +4601,13 @@ var CombatResources = /*#__PURE__*/function () {
   }]);
 }();
 ;// ./node_modules/libram/dist/logger.js
+function logger_typeof(o) { "@babel/helpers - typeof"; return logger_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, logger_typeof(o); }
 function logger_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function logger_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, logger_toPropertyKey(o.key), o); } }
 function logger_createClass(e, r, t) { return r && logger_defineProperties(e.prototype, r), t && logger_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function logger_defineProperty(e, r, t) { return (r = logger_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function logger_toPropertyKey(t) { var i = logger_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function logger_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function logger_toPropertyKey(t) { var i = logger_toPrimitive(t, "string"); return "symbol" == logger_typeof(i) ? i : i + ""; }
+function logger_toPrimitive(t, r) { if ("object" != logger_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != logger_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 var LogLevels;
 (function (LogLevels) {
@@ -4680,6 +4685,7 @@ var Logger = /*#__PURE__*/function () {
 logger_defineProperty(Logger, "currentLevel", LogLevels.ERROR);
 /* harmony default export */ const dist_logger = (new Logger());
 ;// ./node_modules/libram/dist/maximize.js
+function maximize_typeof(o) { "@babel/helpers - typeof"; return maximize_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, maximize_typeof(o); }
 var maximize_templateObject, maximize_templateObject2, maximize_templateObject3, maximize_templateObject4, maximize_templateObject5, maximize_templateObject6, maximize_templateObject7, maximize_templateObject8, maximize_templateObject9, maximize_templateObject10, maximize_templateObject11, maximize_templateObject12, maximize_templateObject13, maximize_templateObject14, maximize_templateObject15, maximize_templateObject16, maximize_templateObject17, maximize_templateObject18, maximize_templateObject19, maximize_templateObject20, maximize_templateObject21, maximize_templateObject22, maximize_templateObject23, maximize_templateObject24, maximize_templateObject25, maximize_templateObject26, maximize_templateObject27, maximize_templateObject28, maximize_templateObject29, maximize_templateObject30, maximize_templateObject31, maximize_templateObject32, maximize_templateObject33, maximize_templateObject34, maximize_templateObject35, maximize_templateObject36, maximize_templateObject37, maximize_templateObject38, maximize_templateObject39, maximize_templateObject40, maximize_templateObject41, maximize_templateObject42, maximize_templateObject43, maximize_templateObject44, maximize_templateObject45, maximize_templateObject46, maximize_templateObject47, _templateObject48, _templateObject49, _templateObject50;
 function maximize_slicedToArray(r, e) { return maximize_arrayWithHoles(r) || maximize_iterableToArrayLimit(r, e) || maximize_unsupportedIterableToArray(r, e) || maximize_nonIterableRest(); }
 function maximize_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4698,8 +4704,8 @@ function maximize_taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Ob
 function maximize_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function maximize_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? maximize_ownKeys(Object(t), !0).forEach(function (r) { maximize_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : maximize_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function maximize_defineProperty(e, r, t) { return (r = maximize_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function maximize_toPropertyKey(t) { var i = maximize_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function maximize_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function maximize_toPropertyKey(t) { var i = maximize_toPrimitive(t, "string"); return "symbol" == maximize_typeof(i) ? i : i + ""; }
+function maximize_toPrimitive(t, r) { if ("object" != maximize_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != maximize_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function maximize_toConsumableArray(r) { return maximize_arrayWithoutHoles(r) || maximize_iterableToArray(r) || maximize_unsupportedIterableToArray(r) || maximize_nonIterableSpread(); }
 function maximize_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function maximize_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return maximize_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? maximize_arrayLikeToArray(r, a) : void 0; } }
@@ -5305,6 +5311,7 @@ function clearMaximizerCache() {
 }
 ;// ./node_modules/grimoire-kolmafia/dist/outfit.js
 var outfit_templateObject, outfit_templateObject2, outfit_templateObject3, outfit_templateObject4, outfit_templateObject5, outfit_templateObject6, outfit_templateObject7, outfit_templateObject8, outfit_templateObject9, outfit_templateObject10, outfit_templateObject11, outfit_templateObject12, outfit_templateObject13, outfit_templateObject14, outfit_templateObject15, outfit_templateObject16, outfit_templateObject17, outfit_templateObject18, outfit_templateObject19, outfit_templateObject20, outfit_templateObject21, outfit_templateObject22, outfit_templateObject23, outfit_templateObject24, outfit_templateObject25, outfit_templateObject26, outfit_templateObject27, outfit_templateObject28, outfit_templateObject29, outfit_templateObject30, outfit_templateObject31, outfit_templateObject32, outfit_templateObject33, outfit_templateObject34, outfit_templateObject35, outfit_templateObject36, outfit_templateObject37, outfit_templateObject38, outfit_templateObject39, outfit_templateObject40, outfit_templateObject41, outfit_templateObject42, outfit_templateObject43, outfit_templateObject44, outfit_templateObject45, outfit_templateObject46, outfit_templateObject47, outfit_templateObject48, outfit_templateObject49, outfit_templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61;
+function outfit_typeof(o) { "@babel/helpers - typeof"; return outfit_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, outfit_typeof(o); }
 function outfit_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function outfit_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? outfit_ownKeys(Object(t), !0).forEach(function (r) { outfit_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : outfit_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function outfit_defineProperty(e, r, t) { return (r = outfit_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -5323,8 +5330,8 @@ function outfit_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.l
 function outfit_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function outfit_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, outfit_toPropertyKey(o.key), o); } }
 function outfit_createClass(e, r, t) { return r && outfit_defineProperties(e.prototype, r), t && outfit_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function outfit_toPropertyKey(t) { var i = outfit_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function outfit_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function outfit_toPropertyKey(t) { var i = outfit_toPrimitive(t, "string"); return "symbol" == outfit_typeof(i) ? i : i + ""; }
+function outfit_toPrimitive(t, r) { if ("object" != outfit_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != outfit_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 var FORCE_REFRESH_REQUIREMENT = new Requirement([], {
@@ -6172,6 +6179,7 @@ function getMode(property, options) {
   return options.find(s => s === val); // .includes has type issues
 }
 ;// ./node_modules/grimoire-kolmafia/dist/engine.js
+function engine_typeof(o) { "@babel/helpers - typeof"; return engine_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, engine_typeof(o); }
 var engine_templateObject, engine_templateObject2;
 function engine_taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.freeze(Object.defineProperties(e, { raw: { value: Object.freeze(t) } })); }
 function engine_toConsumableArray(r) { return engine_arrayWithoutHoles(r) || engine_iterableToArray(r) || engine_unsupportedIterableToArray(r) || engine_nonIterableSpread(); }
@@ -6190,8 +6198,8 @@ function engine_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { v
 function engine_defineProperty(e, r, t) { return (r = engine_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function engine_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, engine_toPropertyKey(o.key), o); } }
 function engine_createClass(e, r, t) { return r && engine_defineProperties(e.prototype, r), t && engine_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function engine_toPropertyKey(t) { var i = engine_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function engine_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function engine_toPropertyKey(t) { var i = engine_toPrimitive(t, "string"); return "symbol" == engine_typeof(i) ? i : i + ""; }
+function engine_toPrimitive(t, r) { if ("object" != engine_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != engine_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function engine_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 
 
@@ -6742,6 +6750,7 @@ var args = Args.create("thriftshop", "Trade in your hand-me-downs for some vinta
   })
 });
 ;// ./src/outfits.ts
+function outfits_typeof(o) { "@babel/helpers - typeof"; return outfits_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, outfits_typeof(o); }
 function outfits_toConsumableArray(r) { return outfits_arrayWithoutHoles(r) || outfits_iterableToArray(r) || outfits_unsupportedIterableToArray(r) || outfits_nonIterableSpread(); }
 function outfits_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function outfits_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return outfits_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? outfits_arrayLikeToArray(r, a) : void 0; } }
@@ -6751,13 +6760,21 @@ function outfits_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.
 function outfits_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function outfits_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? outfits_ownKeys(Object(t), !0).forEach(function (r) { outfits_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : outfits_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function outfits_defineProperty(e, r, t) { return (r = outfits_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function outfits_toPropertyKey(t) { var i = outfits_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function outfits_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function outfits_toPropertyKey(t) { var i = outfits_toPrimitive(t, "string"); return "symbol" == outfits_typeof(i) ? i : i + ""; }
+function outfits_toPrimitive(t, r) { if ("object" != outfits_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != outfits_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
 
 var standardOutfits = () => [{
+  year: 2025,
+  name: "Petrified Wood Professional Wardrobe",
+  difficulty: Difficulty.Hardcore
+}, {
+  year: 2025,
+  name: "Crepe Paper Participant's Clothes",
+  difficulty: Difficulty.Normal
+}, {
   year: 2024,
   name: "Adobe Armor",
   difficulty: Difficulty.Hardcore
@@ -6880,6 +6897,7 @@ var DESIRED_AMOUNTS = {
 };
 ;// ./src/discover.ts
 var discover_templateObject;
+function discover_typeof(o) { "@babel/helpers - typeof"; return discover_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, discover_typeof(o); }
 function discover_toConsumableArray(r) { return discover_arrayWithoutHoles(r) || discover_iterableToArray(r) || discover_unsupportedIterableToArray(r) || discover_nonIterableSpread(); }
 function discover_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function discover_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return discover_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? discover_arrayLikeToArray(r, a) : void 0; } }
@@ -6890,8 +6908,8 @@ function discover_taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Ob
 function discover_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function discover_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? discover_ownKeys(Object(t), !0).forEach(function (r) { discover_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : discover_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function discover_defineProperty(e, r, t) { return (r = discover_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function discover_toPropertyKey(t) { var i = discover_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function discover_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function discover_toPropertyKey(t) { var i = discover_toPrimitive(t, "string"); return "symbol" == discover_typeof(i) ? i : i + ""; }
+function discover_toPrimitive(t, r) { if ("object" != discover_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != discover_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
@@ -7078,6 +7096,7 @@ function oneShotWarning() {
   }
 }
 ;// ./src/plan.ts
+function plan_typeof(o) { "@babel/helpers - typeof"; return plan_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, plan_typeof(o); }
 function plan_toConsumableArray(r) { return plan_arrayWithoutHoles(r) || plan_iterableToArray(r) || plan_unsupportedIterableToArray(r) || plan_nonIterableSpread(); }
 function plan_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function plan_iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -7085,8 +7104,8 @@ function plan_arrayWithoutHoles(r) { if (Array.isArray(r)) return plan_arrayLike
 function plan_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function plan_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? plan_ownKeys(Object(t), !0).forEach(function (r) { plan_defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : plan_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function plan_defineProperty(e, r, t) { return (r = plan_toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function plan_toPropertyKey(t) { var i = plan_toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function plan_toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function plan_toPropertyKey(t) { var i = plan_toPrimitive(t, "string"); return "symbol" == plan_typeof(i) ? i : i + ""; }
+function plan_toPrimitive(t, r) { if ("object" != plan_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != plan_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function plan_slicedToArray(r, e) { return plan_arrayWithHoles(r) || plan_iterableToArrayLimit(r, e) || plan_unsupportedIterableToArray(r, e) || plan_nonIterableRest(); }
 function plan_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function plan_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return plan_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? plan_arrayLikeToArray(r, a) : void 0; } }
@@ -7272,7 +7291,138 @@ function performAction(_ref3) {
   }
   (0,external_kolmafia_namespaceObject.abort)("Unidentified action: \"".concat(type, "\""));
 }
+;// ./node_modules/libram/dist/since.js
+function since_typeof(o) { "@babel/helpers - typeof"; return since_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, since_typeof(o); }
+function since_defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, since_toPropertyKey(o.key), o); } }
+function since_createClass(e, r, t) { return r && since_defineProperties(e.prototype, r), t && since_defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function since_toPropertyKey(t) { var i = since_toPrimitive(t, "string"); return "symbol" == since_typeof(i) ? i : i + ""; }
+function since_toPrimitive(t, r) { if ("object" != since_typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != since_typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function since_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function since_callSuper(t, o, e) { return o = since_getPrototypeOf(o), since_possibleConstructorReturn(t, since_isNativeReflectConstruct() ? Reflect.construct(o, e || [], since_getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function since_possibleConstructorReturn(t, e) { if (e && ("object" == since_typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return since_assertThisInitialized(t); }
+function since_assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function since_inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && since_setPrototypeOf(t, e); }
+function since_wrapNativeSuper(t) { var r = "function" == typeof Map ? new Map() : void 0; return since_wrapNativeSuper = function _wrapNativeSuper(t) { if (null === t || !since_isNativeFunction(t)) return t; if ("function" != typeof t) throw new TypeError("Super expression must either be null or a function"); if (void 0 !== r) { if (r.has(t)) return r.get(t); r.set(t, Wrapper); } function Wrapper() { return since_construct(t, arguments, since_getPrototypeOf(this).constructor); } return Wrapper.prototype = Object.create(t.prototype, { constructor: { value: Wrapper, enumerable: !1, writable: !0, configurable: !0 } }), since_setPrototypeOf(Wrapper, t); }, since_wrapNativeSuper(t); }
+function since_construct(t, e, r) { if (since_isNativeReflectConstruct()) return Reflect.construct.apply(null, arguments); var o = [null]; o.push.apply(o, e); var p = new (t.bind.apply(t, o))(); return r && since_setPrototypeOf(p, r.prototype), p; }
+function since_isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (since_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function since_isNativeFunction(t) { try { return -1 !== Function.toString.call(t).indexOf("[native code]"); } catch (n) { return "function" == typeof t; } }
+function since_setPrototypeOf(t, e) { return since_setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, since_setPrototypeOf(t, e); }
+function since_getPrototypeOf(t) { return since_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, since_getPrototypeOf(t); }
+/**
+ * Provides functions for checking KoLmafia's version and revision.
+ *
+ * @packageDocumentation
+ */
+
+/**
+ * Represents an exception thrown when the current KoLmafia version does not
+ * match an expected condition.
+ */
+var KolmafiaVersionError = /*#__PURE__*/function (_Error) {
+  function KolmafiaVersionError(message) {
+    var _this;
+    since_classCallCheck(this, KolmafiaVersionError);
+    _this = since_callSuper(this, KolmafiaVersionError, [message]);
+    // Explicitly set the prototype, so that 'instanceof' still works in Node.js
+    // even when the class is transpiled down to ES5
+    // See: https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+    // Note that this code isn't needed for Rhino.
+    Object.setPrototypeOf(_this, KolmafiaVersionError.prototype);
+    return _this;
+  }
+  since_inherits(KolmafiaVersionError, _Error);
+  return since_createClass(KolmafiaVersionError);
+}(/*#__PURE__*/since_wrapNativeSuper(Error));
+// Manually set class name, so that the stack trace shows proper name in Rhino
+KolmafiaVersionError.prototype.name = "KolmafiaVersionError";
+/**
+ * Returns the currently executing script name, suitable for embedding in an
+ * error message.
+ *
+ * @returns Path of the main script wrapped in single-quotes, or `"This script"`
+ *    if the path cannot be determined
+ */
+function getScriptName() {
+  var _require$main;
+  // In Rhino, the current script name is available in require.main.id
+  var scriptName = (_require$main = require.main) === null || _require$main === void 0 ? void 0 : _require$main.id;
+  return scriptName ? "'".concat(scriptName, "'") : "This script";
+}
+/**
+ * If KoLmafia's revision number is less than `revision`, throws an exception.
+ * Otherwise, does nothing.
+ *
+ * This behaves like the `since rXXX;` statement in ASH.
+ *
+ * @param revision Revision number
+ * @throws {KolmafiaVersionError}
+ *    If KoLmafia's revision number is less than `revision`.
+ * @throws {TypeError} If `revision` is not an integer
+ * @example
+ * ```ts
+ * // Throws if KoLmafia revision is less than r20500
+ * sinceKolmafiaRevision(20500);
+ * ```
+ */
+function sinceKolmafiaRevision(revision) {
+  if (!Number.isInteger(revision)) {
+    throw new TypeError("Invalid revision number ".concat(revision, " (must be an integer)"));
+  }
+  // Based on net.sourceforge.kolmafia.textui.Parser.sinceException()
+  var currentRevision = (0,external_kolmafia_namespaceObject.getRevision)();
+  if (currentRevision > 0 && currentRevision < revision) {
+    throw new KolmafiaVersionError("".concat(getScriptName(), " requires revision r").concat(revision, " of kolmafia or higher (current: ").concat((0,external_kolmafia_namespaceObject.getRevision)(), "). Up-to-date builds can be found at https://ci.kolmafia.us/."));
+  }
+}
+/**
+ * If KoLmafia's version is less than `majorVersion.minorVersion`, throws an
+ * exception.
+ * Otherwise, does nothing.
+ *
+ * This behaves like the `since X.Y;` statement in ASH.
+ *
+ * @param majorVersion Major version number
+ * @param minorVersion Minor version number
+ * @deprecated Point versions are no longer released by KoLmafia
+ * @throws {KolmafiaVersionError}
+ *    If KoLmafia's major version is less than `majorVersion`, or if the major
+ *    versions are equal but the minor version is less than `minorVersion`
+ * @throws {TypeError}
+ *    If either `majorVersion` or `minorVersion` are not integers
+ * @example
+ * ```ts
+ * // Throws if KoLmafia version is less than 20.7
+ * sinceKolmafiaVersion(20, 7);
+ * ```
+ */
+function sinceKolmafiaVersion(majorVersion, minorVersion) {
+  if (getRevision() >= 25720) {
+    return;
+  }
+  if (!Number.isInteger(majorVersion)) {
+    throw new TypeError("Invalid major version number ".concat(majorVersion, " (must be an integer)"));
+  }
+  if (!Number.isInteger(minorVersion)) {
+    throw new TypeError("Invalid minor version number ".concat(minorVersion, " (must be an integer)"));
+  }
+  if (majorVersion > 21 || majorVersion === 20 && minorVersion > 9) {
+    throw new Error("There were no versions released after 21.09. This command will always fail");
+  }
+  var versionStr = getVersion();
+  var versionStrMatch = /v(\d+)\.(\d+)/.exec(versionStr);
+  if (!versionStrMatch) {
+    // This is not something the user should handle
+    throw new Error("Unexpected KoLmafia version string: \"".concat(versionStr, "\". You may need to update the script."));
+  }
+  var currentMajorVersion = Number(versionStrMatch[1]);
+  var currentMinorVersion = Number(versionStrMatch[2]);
+  // Based on net.sourceforge.kolmafia.textui.Parser.sinceException()
+  if (currentMajorVersion < majorVersion || currentMajorVersion === majorVersion && currentMinorVersion < minorVersion) {
+    throw new KolmafiaVersionError("".concat(getScriptName(), " requires version ").concat(majorVersion, ".").concat(minorVersion, " of kolmafia or higher (current: ").concat(currentMajorVersion, ".").concat(currentMinorVersion, "). Up-to-date builds can be found at https://ci.kolmafia.us/."));
+  }
+}
 ;// ./src/thriftshop.ts
+
 
 
 
@@ -7283,6 +7433,8 @@ function main(command) {
   Args.fill(args, command);
   var keys = Object.keys(args.commands);
   if (args.help || keys.every(k => !args.commands[k])) return Args.showHelp(args);
+  sinceKolmafiaRevision(28312); // Add missing outfit piece for HC 2025
+
   var state = discover();
   if (args.commands.browse) {
     presentState(state);
@@ -7296,7 +7448,7 @@ function main(command) {
   }
 }
 var __webpack_export_target__ = exports;
-for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
+for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()
 ;
